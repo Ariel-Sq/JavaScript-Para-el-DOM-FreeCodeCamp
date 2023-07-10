@@ -1,0 +1,17 @@
+let botonElem = document.getElementById("boton-cambiar-cita");
+let citaElem = document.getElementById("cita");
+let autorElem = document.getElementById("autor");
+
+function generarEneteroAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function cambiarCita() {
+  let indiceAleatorio = generarEneteroAleatorio(0, citas.length);
+  citaElem.innerHTML = `"${citas[indiceAleatorio].texto}"`;
+  autorElem.innerHTML = citas[indiceAleatorio].autor;
+}
+
+cambiarCita();
+
+botonElem.addEventListener("click", cambiarCita);
