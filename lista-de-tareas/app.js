@@ -1,5 +1,6 @@
 const input = document.getElementById("ingresar-tarea");
 const boton = document.querySelector("button");
+const botonVaciar = document.getElementById("vaciar");
 const listaDeTareas = document.getElementById("lista-de-tareas");
 
 function agregarTarea() {
@@ -26,6 +27,8 @@ function agregarTarea() {
     iconos.append(completar, eliminar);
 
     listaDeTareas.appendChild(tareaNueva);
+
+    input.value = "";
   } else {
     alert("Por favor ingresa una tarea");
   }
@@ -41,7 +44,12 @@ function eliminarTarea(e) {
   tarea.remove();
 }
 
+function vaciarLista() {
+  listaDeTareas.innerHTML = "";
+}
+
 boton.addEventListener("click", agregarTarea);
+botonVaciar.addEventListener("click", vaciarLista);
 
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
