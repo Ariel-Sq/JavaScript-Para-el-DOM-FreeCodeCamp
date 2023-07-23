@@ -81,7 +81,7 @@ button {
 
 .tarea.completada {
 	text-decoration: line-through;
-	border-color: black;
+	background-color: black;
 	border: none;
 }
 
